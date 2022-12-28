@@ -24,7 +24,7 @@ public class TeamService {
     RestTemplate restTemplate;
 
     @Autowired
-    ComercialFeignClient comercialeFeignClient;
+    ComercialFeignClient comercialFeignClient;
 
     @Autowired
     SeguridadFeignClient seguridadFeignClient;
@@ -54,7 +54,7 @@ public class TeamService {
 
     public Comercial saveComercial(int teamId, Comercial comerciale) {
         comerciale.setTeamId(teamId);
-        Comercial comercialNew = comercialeFeignClient.save(comerciale);
+        Comercial comercialNew = comercialFeignClient.save(comerciale);
         return comercialNew;
     }
 
@@ -72,7 +72,7 @@ public class TeamService {
             return result;
         }
         result.put("Team", team);
-        List<Comercial> comerciales = comercialeFeignClient.getComerciales(teamId);
+        List<Comercial> comerciales = comercialFeignClient.getComerciales(teamId);
         if(comerciales.isEmpty())
             result.put("Comerciales", "ese team no tiene asignado personal de Comercial");
         else

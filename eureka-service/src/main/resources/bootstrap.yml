@@ -1,5 +1,5 @@
 server:
-  port: 8769
+  port: 8761
 spring:
   application:
     name: eureka-service
@@ -7,3 +7,6 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8081
+eureka:
+  client:
+    register-with-eureka: false

@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-          default-label: zipkin-sleuth
-          uri: https://github.com/idevillafane/microservicios-experta
+          default-label: main
+          uri: https://github.com/idevillafane/microservicios-experta.git
           search-paths: config-data
   application:
     name: config-service
